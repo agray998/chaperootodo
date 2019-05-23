@@ -5,11 +5,13 @@
     <p class="subhead">
       The Perfect Task Management Solution
     </p>
-    <p class="table" v-for="task in tasks" v-bind:key="task.task_id">
-      {{ task.task_id }}
-      {{ task.task }}
-      {{ task.status }}
-    </p>
+    <div class="table" v-for="task in tasks" v-bind:key="task.task_id">
+      <div v-if="task.status === 'pending'"> 
+        {{ task.task_id }}
+        {{ task.task }}
+        {{ task.status }} 
+      </div>
+    </div>
 
   </div>
 </template>

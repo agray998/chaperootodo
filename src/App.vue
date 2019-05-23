@@ -9,7 +9,6 @@
 <script>
 
 import Dashboard from './components/Dashboard.vue'
-import axios from "axios";
 export default {
   name: 'app',
   components: {
