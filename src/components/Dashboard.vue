@@ -1,23 +1,12 @@
 <template>
-  <div class="dashboard">
+  <div>
 
     <h1>{{ msg }}</h1>
-    <p class="subhead">
-      The Perfect Task Management Solution
-    </p>
-    <div class="pendingtable" v-for="task in tasks" v-bind:key="task.task_id">
-      <div v-if="task.status === 'pending'"> 
-        {{ task.task_id }}
-        {{ task.task }}
-        {{ task.status }} 
-      </div>
-    </div>
-    <div class="completetable" v-for="task in tasks" v-bind:key="task.task_id">
-      <div v-if="task.status === 'complete'">
-        {{ task.task_id }}
-        {{ task.task }}
-        {{ task.status }}
-      </div>
+
+    <Subhead/>
+
+    <div v-for="task in tasks" v-bind:key="task.task_id">
+      <Task :task="task"/>       
     </div>
 
   </div>
@@ -25,9 +14,16 @@
 
 <script>
 
-import axios from "axios";
+import axios from 'axios';
+import Task from './Task.vue';
+import Subhead from './Subhead.vue';
+
 export default {
   name: 'Dashboard',
+  components: {
+    Task,
+    Subhead
+  },
   props: {
     msg: String
   },
@@ -50,20 +46,8 @@ export default {
 
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
+
 <style scoped>
 
-h1 {
-  margin: 40px 0 0;
-      }
-
-.pendingtable{
-  color:black;
-}
-
-.completetable{
-  color:red;
-  text-decoration: line-through;
-}
 
 </style>

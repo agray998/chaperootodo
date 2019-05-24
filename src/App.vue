@@ -9,10 +9,11 @@
 <script>
 
 import Dashboard from './components/Dashboard.vue'
+
 export default {
   name: 'app',
   components: {
-    Dashboard
+    Dashboard    
   },
 }
 
@@ -26,7 +27,7 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #0d7be9;
-  margin-top: 60px;
+  margin-top: 3.75em;
 }
 
 </style>
