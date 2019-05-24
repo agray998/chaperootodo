@@ -5,11 +5,18 @@
     <p class="subhead">
       The Perfect Task Management Solution
     </p>
-    <div class="table" v-for="task in tasks" v-bind:key="task.task_id">
+    <div class="pendingtable" v-for="task in tasks" v-bind:key="task.task_id">
       <div v-if="task.status === 'pending'"> 
         {{ task.task_id }}
         {{ task.task }}
         {{ task.status }} 
+      </div>
+    </div>
+    <div class="completetable" v-for="task in tasks" v-bind:key="task.task_id">
+      <div v-if="task.status === 'complete'">
+        {{ task.task_id }}
+        {{ task.task }}
+        {{ task.status }}
       </div>
     </div>
 
@@ -22,7 +29,7 @@ import axios from "axios";
 export default {
   name: 'Dashboard',
   props: {
-    msg: String,
+    msg: String
   },
   data(){
     return {
@@ -50,8 +57,13 @@ h1 {
   margin: 40px 0 0;
       }
 
-.table{
-  color:black
+.pendingtable{
+  color:black;
+}
+
+.completetable{
+  color:red;
+  text-decoration: line-through;
 }
 
 </style>
