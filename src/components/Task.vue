@@ -1,8 +1,8 @@
 <template>
     <div class="task-card" v-bind:class="task.status">
 
-        {{ task.task_id }}
-        {{ task.task }}
+        {{task.task_id}}
+        {{task.task}}
         {{task.status}}
         
         <button v-on:click="deleteTask(task.task_id)">
@@ -35,7 +35,9 @@ export default {
             }).then((response) => {alert(response.data)}).catch()
         },
         completeTask: function(id){
-            alert(`Task number ${id} complete!`);
+            axios.put("http://localhost:3000/task/status", {
+                task_id: id, status: "complete"
+            }).then((response) => {alert(response.data)}).catch()
         }
     }
 }
