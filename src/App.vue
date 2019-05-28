@@ -1,7 +1,7 @@
 <template>
 
   <div id="app">
-    <Dashboard msg="Welcome to Chaperoo To-Do"/>
+    <Dashboard/>
   </div>
 
 </template>

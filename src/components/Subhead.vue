@@ -13,10 +13,7 @@
 
 
 export default {
-    name: 'Subhead',
-    props: {
-
-    }
+    name: 'Subhead'
 }
 
 </script>

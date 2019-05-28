@@ -1,7 +1,7 @@
 <template>
   <div>
 
-    <h1>{{ msg }}</h1>
+    <Header/>
 
     <Subhead/>
 
@@ -17,12 +17,14 @@
 import axios from 'axios';
 import Task from './Task.vue';
 import Subhead from './Subhead.vue';
+import Header from './Header.vue';
 
 export default {
   name: 'Dashboard',
   components: {
     Task,
-    Subhead
+    Subhead,
+    Header
   },
   props: {
     msg: String

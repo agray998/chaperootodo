@@ -3,10 +3,12 @@
 
         {{ task.task_id }}
         {{ task.task }}
-        {{ task.status }}
+        {{task.status}}
+        
         <button v-on:click="deleteTask(task.task_id)">
             del
         </button> 
+
         <button v-on:click="completeTask(task.task_id)">
             com
         </button>     
@@ -29,8 +31,8 @@ export default {
     methods: {
         deleteTask: function(id){
             axios.delete("http://localhost:3000/task/deleteone", {
-                task_id: id
-            }).then((response) => {alert(response)}).catch()
+                data: {task_id: id}
+            }).then((response) => {alert(response.data)}).catch()
         },
         completeTask: function(id){
             alert(`Task number ${id} complete!`);
@@ -58,8 +60,7 @@ export default {
     border-style: solid;
     margin: 1em;
     padding: 0.5em;
-    border-radius: 0.5em;
-    max-width: 40em;   
+    border-radius: 0.5em;      
 }
 
 </style>
