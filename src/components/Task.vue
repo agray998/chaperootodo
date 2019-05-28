@@ -32,12 +32,17 @@ export default {
         deleteTask: function(id){
             axios.delete("http://localhost:3000/task/deleteone", {
                 data: {task_id: id}
-            }).then((response) => {alert(response.data)}).catch()
+            }).then((response) => {
+                alert(response.data)
+            }).catch()
         },
         completeTask: function(id){
             axios.put("http://localhost:3000/task/status", {
                 task_id: id, status: "complete"
-            }).then((response) => {alert(response.data)}).catch()
+            }).then((response) => {
+                alert(response.data)
+                this.task.status = "complete"
+            }).catch()
         }
     }
 }
