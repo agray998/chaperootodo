@@ -4,23 +4,42 @@
       <p>
         The Perfect Task Management Solution
       
-      <button class="add">
+      <input v-model="message" placeholder="Enter a Task">
+
+      <button class="add" v-on:click="insertTask(message)">
             <icon name="plus"></icon>
       </button> 
 
       </p>
-
       
-
     </div>
 </template>
 
 
 <script>
 
+import axios from 'axios';
+import Task from './Task.vue';
 
 export default {
-    name: 'Subhead'
+    name: 'Subhead',
+    components: {
+      Task
+    },
+    props: {
+      newTask: {
+        type: Object
+      }
+    },
+    methods: {
+      insertTask: function(input){
+         axios.post("http://localhost:3000/task/insertone", {
+           task: input
+         }).then((response) => {
+           alert(response.data)
+         }).catch()
+      }
+    }
 }
 
 </script>
@@ -41,7 +60,18 @@ export default {
 .subhead button.add {
   float: left;
   border-radius: 0.5em;
-  margin: 0.12em
+  margin: 0.3em
+}
+
+.subhead input{
+  float:left;
+  border: lightgray;
+  border-width: 0.1em;
+  border-style: solid;
+  border-radius: 0.5em;
+  margin: 0.3em;
+  padding: 0.3em;
+  width: 30em;
 }
 
 </style>
