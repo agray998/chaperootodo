@@ -12,7 +12,6 @@
 
 <script>
 
-import axios from 'axios';
 import Subhead from './Subhead.vue';
 import Header from './Header.vue';
 import Tasklist from './Tasklist.vue';

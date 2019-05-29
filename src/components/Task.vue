@@ -5,12 +5,12 @@
         {{task.task}}
         {{task.status}}
         
-        <button v-on:click="deleteTask(task.task_id)">
-            del
+        <button class="delete" v-on:click="deleteTask(task.task_id)">
+            <icon name="trash-alt"></icon>
         </button> 
 
-        <button v-on:click="completeTask(task.task_id)">
-            com
+        <button class="complete" v-on:click="completeTask(task.task_id)">
+            <icon name="check"></icon>
         </button>     
 
     </div>
@@ -68,6 +68,20 @@ export default {
     margin: 1em;
     padding: 0.5em;
     border-radius: 0.5em;      
+}
+
+.task-card button.delete{
+    color: red;
+    float: right;
+    margin: 0.12em;
+    border-radius: 0.5em;
+}
+
+.task-card button.complete{
+    color: green;
+    float: right;
+    margin: 0.12em;
+    border-radius: 0.5em;
 }
 
 </style>

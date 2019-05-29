@@ -1,9 +1,16 @@
 <template>
-    <div>
+    <div class="subhead">
    
-      <p class="subhead">
+      <p>
         The Perfect Task Management Solution
+      
+      <button class="add">
+            <icon name="plus"></icon>
+      </button> 
+
       </p>
+
+      
 
     </div>
 </template>
@@ -21,9 +28,20 @@ export default {
 
 <style scoped>
 
-p {
-  margin: 2.5em 0 0;
+.subhead {
+  margin: auto;
   margin-block-start: 0.5em;
-      }
+  max-width: 50em;
+}
+
+.subhead p {
+  margin: 1em;
+}
+
+.subhead button.add {
+  float: left;
+  border-radius: 0.5em;
+  margin: 0.12em
+}
 
 </style>
