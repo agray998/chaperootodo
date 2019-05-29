@@ -5,6 +5,8 @@
 
     <Subhead/>
 
+    <NewTask/>
+
     <Tasklist/>
   
   </div>
@@ -15,13 +17,15 @@
 import Subhead from './Subhead.vue';
 import Header from './Header.vue';
 import Tasklist from './Tasklist.vue';
+import NewTask from './NewTask.vue';
 
 export default {
   name: 'Dashboard',
   components: {
-    Subhead,
     Header,
-    Tasklist
+    Subhead,
+    NewTask,
+    Tasklist,
   },
   props: {
     msg: String

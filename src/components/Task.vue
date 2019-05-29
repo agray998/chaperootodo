@@ -66,7 +66,7 @@ export default {
     border-width: 0.1em;
     border-style: solid;
     margin: 1em;
-    padding: 0.5em;
+    padding: 0.4em;
     border-radius: 0.5em;      
 }
 
