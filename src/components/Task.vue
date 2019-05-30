@@ -54,10 +54,11 @@ export default {
 
 .pending{
   color:grey;
+  font-weight: bold;
 }
 
 .complete{
-  color:lightgreen;
+  color:green;
   text-decoration: line-through;
 }
 
@@ -67,8 +68,7 @@ export default {
     border-style: solid;
     margin: 1em;
     padding: 0.4em;
-    border-radius: 0.5em;  
-    font-weight: bold; 
+    border-radius: 0.5em; 
 }
 
 .task-card button.delete{
