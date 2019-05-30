@@ -7,13 +7,14 @@
             <icon name="times"></icon>
         </button> 
 
-        <button class="edit" v-on:click="editTask(task.task_id, )">
+        <button class="edit" v-on:click="editTask(task.task_id, message)">
+            <!-- <input v-model="message" placeholder="Edit Task..."> -->
             <icon name="pencil-alt"></icon>
         </button>  
 
         <button class="complete" v-on:click="completeTask(task.task_id)">
             <icon name="check"></icon>
-        </button>     
+        </button>   
 
     </div>
 </template>
