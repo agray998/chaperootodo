@@ -75,6 +75,8 @@ export default {
     float: right;
     margin: 0.12em;
     border-radius: 0.5em;
+    background: whitesmoke;
+    border: none;
 }
 
 .task-card button.complete{
@@ -82,6 +84,8 @@ export default {
     float: right;
     margin: 0.12em;
     border-radius: 0.5em;
+    background: whitesmoke;
+    border: none;
 }
 
 </style>

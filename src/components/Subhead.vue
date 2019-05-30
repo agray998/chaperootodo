@@ -21,9 +21,9 @@ export default {
 <style scoped>
 
 .subhead {
-  margin: auto;
-  margin-block-start: 0.5em;
-  max-width: 50em;
-}
+  background: lightblue;
+  color: white;
+  font-weight: bold;
+  }
 
 </style>

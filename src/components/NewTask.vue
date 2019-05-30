@@ -20,7 +20,8 @@ export default {
     props: {
       newTask: {
         type: Object
-      }
+      },
+      message: String
     },
     methods: {
       insertTask: function(input){
@@ -41,7 +42,9 @@ export default {
 .newtask button.add {
   border: none;
   border-radius: 0.5em;
-  margin: 0.3em; 
+  margin: 0.2em; 
+  background: lightblue;
+  position: absolute;
 }
 
 .newtask input{
@@ -52,7 +55,11 @@ export default {
   padding: 0.5em;
   width: 50em;
   margin: auto;
-  max-width: 50em;
+}
+
+.newtask{
+  padding-bottom: 4em;
+  text-align: center;
 }
 
 </style>

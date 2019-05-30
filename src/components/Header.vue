@@ -21,4 +21,11 @@ export default {
 
 <style scoped>
 
+h1{
+  color: white;
+  padding: 2em;
+  padding-bottom: 0em;
+  text-align: center;
+}
+
 </style>

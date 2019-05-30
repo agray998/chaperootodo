@@ -43,7 +43,9 @@ export default {
 
 .tasklist{
     margin: auto;
-    max-width: 50em;
+    margin-top: 0em;
+    padding: 0.5em;
+    background: whitesmoke;
 }
 
 </style>

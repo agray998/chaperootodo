@@ -1,11 +1,10 @@
 <template>
   <div>
 
-    <Header/>
-
-    <Subhead/>
-
-    <NewTask/>
+    <div class="headerbox">
+      <Header/>
+      <NewTask/>
+    </div>
 
     <Tasklist/>
   
@@ -37,5 +36,8 @@ export default {
 
 <style scoped>
 
+.headerbox{
+  background: lightblue;
+}
 
 </style>
