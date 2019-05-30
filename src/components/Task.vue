@@ -6,7 +6,7 @@
         {{task.status}}
         
         <button class="delete" v-on:click="deleteTask(task.task_id)">
-            <icon name="trash-alt"></icon>
+            <icon name="times"></icon>
         </button> 
 
         <button class="complete" v-on:click="completeTask(task.task_id)">
@@ -53,11 +53,11 @@ export default {
 <style scoped>
 
 .pending{
-  color:black;
+  color:grey;
 }
 
 .complete{
-  color:green;
+  color:lightgreen;
   text-decoration: line-through;
 }
 
@@ -68,11 +68,11 @@ export default {
     margin: 1em;
     padding: 0.4em;
     border-radius: 0.5em;  
-    font-weight: bold;    
+    font-weight: bold; 
 }
 
 .task-card button.delete{
-    color: red;
+    color: grey;
     float: right;
     margin: 0.12em;
     border-radius: 0.5em;

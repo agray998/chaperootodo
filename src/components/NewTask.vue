@@ -44,6 +44,7 @@ export default {
   border-radius: 0.5em;
   margin: 0.2em; 
   background: lightblue;
+  color: gray;
   position: absolute;
 }
 
