@@ -67,7 +67,8 @@ export default {
     border-style: solid;
     margin: 1em;
     padding: 0.4em;
-    border-radius: 0.5em;      
+    border-radius: 0.5em;  
+    font-weight: bold;    
 }
 
 .task-card button.delete{
