@@ -54,7 +54,7 @@ export default {
   border-style: solid;
   border-radius: 0.5em;
   padding: 0.5em;
-  width: 50em;
+  width: 50%; 
   margin: auto;
 }
 

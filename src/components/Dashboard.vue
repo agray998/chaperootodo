@@ -38,6 +38,7 @@ export default {
 
 .headerbox{
   background: lightblue;
+  margin: 0 4em;
 }
 
 </style>

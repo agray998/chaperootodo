@@ -1,13 +1,15 @@
 <template>
     <div class="task-card" v-bind:class="task.status">
 
-        {{task.task_id}}
         {{task.task}}
-        {{task.status}}
         
         <button class="delete" v-on:click="deleteTask(task.task_id)">
             <icon name="times"></icon>
         </button> 
+
+        <button class="edit" v-on:click="editTask(task.task_id, )">
+            <icon name="pencil-alt"></icon>
+        </button>  
 
         <button class="complete" v-on:click="completeTask(task.task_id)">
             <icon name="check"></icon>
@@ -43,6 +45,13 @@ export default {
                 alert(response.data)
                 this.task.status = "complete"
             }).catch()
+        },
+        editTask: function(id, editedTask){
+            axios.put("http://localhost:3000/task/edittask", {
+                task_id: id, task: editedTask
+            }).then((response) => {
+                alert(resonse.data)
+            }).catch()
         }
     }
 }
@@ -63,10 +72,10 @@ export default {
 }
 
 .task-card{
-    border: lightgray;
-    border-width: 0.1em;
-    border-style: solid;
-    margin: 1em;
+    border-bottom: lightgray;
+    border-bottom-width: 0.1em; 
+    border-bottom-style: solid; 
+    margin: 1em auto;
     padding: 0.4em;
     border-radius: 0.5em; 
 }
@@ -82,6 +91,15 @@ export default {
 
 .task-card button.complete{
     color: green;
+    float: right;
+    margin: 0.12em;
+    border-radius: 0.5em;
+    background: whitesmoke;
+    border: none;
+}
+
+.task-card button.edit{
+    color: black;
     float: right;
     margin: 0.12em;
     border-radius: 0.5em;
