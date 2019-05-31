@@ -39,6 +39,8 @@ export default {
 .headerbox{
   background: lightblue;
   margin: 0 4em;
+  border-top-left-radius: 1em;  
+  border-top-right-radius: 1em;
 }
 
 </style>

@@ -45,6 +45,8 @@ export default {
     margin: 0 4em;
     padding: 0.5em;
     background: whitesmoke;
+    border-bottom-left-radius: 1em; 
+    border-bottom-right-radius: 1em;
 }
 
 </style>

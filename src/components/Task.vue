@@ -1,5 +1,5 @@
 <template>
-    <div class="task-card" v-bind:class="task.status">
+    <div class="task-card" v-bind:class="task.status" v-on:dblclick="editTask(task.task_id, message)">
 
         {{task.task}}
         
@@ -8,7 +8,6 @@
         </button> 
 
         <button class="edit" v-on:click="editTask(task.task_id, message)">
-            <!-- <input v-model="message" placeholder="Edit Task..."> -->
             <icon name="pencil-alt"></icon>
         </button>  
 
@@ -51,7 +50,7 @@ export default {
             axios.put("http://localhost:3000/task/edittask", {
                 task_id: id, task: editedTask
             }).then((response) => {
-                alert(resonse.data)
+                alert(response.data)
             }).catch()
         }
     }
