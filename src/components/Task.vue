@@ -44,11 +44,13 @@ export default {
     props:{
         task: {
             type: Object,
-        },
-        message: String
+        }
     },
     data(){
-        return{toggle: true}
+        return{
+            toggle: true,
+            message: ""
+        }
     },
     methods: {
         completeTask: function(id){
