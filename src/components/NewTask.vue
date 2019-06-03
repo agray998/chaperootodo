@@ -1,9 +1,9 @@
 <template>
     <div class="newtask">
          
-      <input v-model="message" placeholder="Enter a Task..." v-on:keyup.enter="$parent.insertTask(message)">
+      <input v-model="message" placeholder="Enter a Task..." v-on:keyup.enter="$parent.insertTask(message), resetInput()">
 
-      <button class="add" v-on:click="$parent.insertTask(message)">
+      <button class="add" v-on:click="$parent.insertTask(message), resetInput()">
             <icon name="plus"></icon>
       </button> 
       
@@ -25,6 +25,11 @@ export default {
     data(){
       return {
         message: ""
+      }
+    },
+    methods: {
+      resetInput: function(){
+        this.message = ""
       }
     }
 }

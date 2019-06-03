@@ -20,9 +20,6 @@ export default {
   components: {
     Header,
     Tasklist
-  },
-  props: {
-    msg: String
   }
 }
 
