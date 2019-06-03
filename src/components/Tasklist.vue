@@ -40,7 +40,7 @@ export default {
       deleteTask: function(id){
         axios.delete("http://localhost:3000/task/deleteone", {
           data: {task_id: id}
-        }).then((response) => {
+        }).then(() => {
           this.tasks.forEach((task, index) => {
             if(task.task_id === id){
               this.tasks.splice(index, 1)
@@ -51,7 +51,7 @@ export default {
       insertTask: function(input){
         axios.post("http://localhost:3000/task/insertone", {
           task: input
-        }).then((response) => {
+        }).then(() => {
           this.getTasks()
         }).catch()
       }   
