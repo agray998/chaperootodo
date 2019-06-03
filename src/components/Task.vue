@@ -1,21 +1,35 @@
 <template>
-    <div class="task-card" v-bind:class="task.status" v-on:dblclick="toggleStatus(False)">
-
-        {{task.task}}
+    <div class="task-card" v-bind:class="task.status" v-on:dblclick="toggleEdit(false)">
         
-        <button class="delete" v-on:click="deleteTask(task.task_id)">
-            <icon name="times"></icon>
-        </button> 
+        <div v-if="!toggle">
+            <input class="toggledTask" v-model="message" v-on:keyup.enter="toggleEdit(true), editTask(task.task_id, task)">
+            <button class="delete" v-on:click="deleteTask(task.task_id)">
+                <icon name="times"></icon>
+            </button> 
 
-        <button class="edit" v-on:click="toggleStatus(False)">
-            <icon name="pencil-alt"></icon>
-        </button>  
+            <button class="edit" v-on:click="toggleEdit(false)">
+                <icon name="pencil-alt"></icon>
+            </button>  
 
-        <button class="complete" v-on:click="completeTask(task.task_id)">
-            <icon name="check"></icon>
-        </button>   
+            <button class="complete" v-on:click="completeTask(task.task_id)">
+                <icon name="check"></icon>
+            </button> 
+        </div>
 
-        <input class="editedTask" v-model="message" v-on:keyup.enter="toggleStatus(True)">
+        <div v-else>
+            {{task.task}}
+            <button class="delete" v-on:click="deleteTask(task.task_id)">
+                <icon name="times"></icon>
+            </button> 
+
+            <button class="edit" v-on:click="toggleEdit(false)">
+                <icon name="pencil-alt"></icon>
+            </button>  
+
+            <button class="complete" v-on:click="completeTask(task.task_id)">
+                <icon name="check"></icon>
+            </button> 
+        </div>
 
     </div>
 </template>
@@ -27,12 +41,14 @@ import axios from 'axios';
 
 export default {
     name: 'Task',
+    props:{
+        task: {
+            type: Object,
+        },
+        message: String
+    },
     data(){
-        return {
-            task: {
-                type: Object
-            }
-        }
+        return{toggle: true}
     },
     methods: {
         deleteTask: function(id){
@@ -57,14 +73,9 @@ export default {
                 alert(response.data)
             }).catch()
         },
-        toggleStatus(bool){
-            if (bool==='False'){
-                this.task = editedTask
-            }
-            else{
-                this.task = task
-            }
-        }
+        toggleEdit: function(toggle){
+            this.toggle = toggle
+        },
     }
 }
 
@@ -119,12 +130,13 @@ export default {
     border: none;
 }
 
-.task-card input.editedTask{
+.task-card input.toggledTask{
     background: whitesmoke;
     border: none;
     font-weight: bold;
     font-style: italic;
     color: gray;
+    width: 50%;
 }
 
 </style>

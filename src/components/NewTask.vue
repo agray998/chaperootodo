@@ -1,9 +1,9 @@
 <template>
     <div class="newtask">
          
-      <input v-model="message" placeholder="Enter a Task..." v-on:keyup.enter="insertTask(message)">
+      <input v-model="message" placeholder="Enter a Task..." v-on:keyup.enter="insertTask(task)">
 
-      <button class="add" v-on:click="insertTask(message)">
+      <button class="add" v-on:click="insertTask(task)">
             <icon name="plus"></icon>
       </button> 
       
