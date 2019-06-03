@@ -1,6 +1,8 @@
 <template>
     <div class="tasklist">
 
+      <NewTask/>
+
     <div v-for="task in tasks" v-bind:key="task.task_id">
       <Task :task="task"/>       
     </div>
@@ -12,13 +14,14 @@
 <script>
 
 import Task from './Task.vue';
+import NewTask from './NewTask.vue';
 import axios from 'axios';
-import { match } from 'minimatch';
 
 export default {
     name: "Tasklist",
     components: {
-      Task  
+      Task, 
+      NewTask
     },
     data(){
       return {
@@ -44,6 +47,13 @@ export default {
           }
         })
       }).catch()
+    },
+    insertTask: function(input){
+      axios.post("http://localhost:3000/task/insertone", {
+        task: input
+      }).then((response) => {
+        this.getTasks()
+      }).catch()
     }   
   }
 }
@@ -55,7 +65,7 @@ export default {
 
 .tasklist{
     margin: 0 4em;
-    padding: 0.5em;
+    padding: 0em;
     background: whitesmoke;
     border-bottom-left-radius: 1em; 
     border-bottom-right-radius: 1em;

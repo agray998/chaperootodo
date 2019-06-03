@@ -1,9 +1,9 @@
 <template>
     <div class="newtask">
          
-      <input v-model="message" placeholder="Enter a Task..." v-on:keyup.enter="insertTask(message)">
+      <input v-model="message" placeholder="Enter a Task..." v-on:keyup.enter="$parent.insertTask(message)">
 
-      <button class="add" v-on:click="insertTask(message)">
+      <button class="add" v-on:click="$parent.insertTask(message)">
             <icon name="plus"></icon>
       </button> 
       
@@ -20,16 +20,11 @@ export default {
     props: {
       newTask: {
         type: Object
-      },
-      message: String
+      }
     },
-    methods: {
-      insertTask: function(input){
-         axios.post("http://localhost:3000/task/insertone", {
-           task: input
-         }).then((response) => {
-           alert(response.data)
-         }).catch()
+    data(){
+      return {
+        message: ""
       }
     }
 }
@@ -59,8 +54,10 @@ export default {
 }
 
 .newtask{
-  padding-bottom: 4em;
+  padding-bottom: 3em;
+  padding-top: 2em;
   text-align: center;
+  background: lightblue;
 }
 
 </style>

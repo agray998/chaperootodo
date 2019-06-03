@@ -26,6 +26,7 @@ h1{
   padding: 2em;
   padding-bottom: 0em;
   text-align: center;
+  margin-bottom: 0em;
 }
 
 </style>

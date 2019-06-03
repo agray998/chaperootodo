@@ -3,7 +3,6 @@
 
     <div class="headerbox">
       <Header/>
-      <NewTask/>
     </div>
 
     <Tasklist/>
@@ -15,13 +14,11 @@
 
 import Header from './Header.vue';
 import Tasklist from './Tasklist.vue';
-import NewTask from './NewTask.vue';
 
 export default {
   name: 'Dashboard',
   components: {
     Header,
-    NewTask,
     Tasklist
   },
   props: {
