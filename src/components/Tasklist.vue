@@ -20,8 +20,8 @@ export default {
       Task  
     },
     data(){
-    return {
-      tasks: []
+      return {
+        tasks: []
     }
   },
   created:function(){

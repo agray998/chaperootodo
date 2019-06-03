@@ -22,7 +22,6 @@ export default {
   name: 'Dashboard',
   components: {
     Header,
-    Subhead,
     NewTask,
     Tasklist,
   },
