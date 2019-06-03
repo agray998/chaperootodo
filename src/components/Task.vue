@@ -2,8 +2,8 @@
     <div class="task-card" v-bind:class="task.status" v-on:dblclick="toggleEdit(false)">
         
         <div v-if="!toggle">
-            <input class="toggledTask" v-model="message" v-on:keyup.enter="toggleEdit(true), editTask(task.task_id, task)">
-            <button class="delete" v-on:click="deleteTask(task.task_id)">
+            <input class="toggledTask" v-model="message" v-on:keyup.enter="toggleEdit(true), editTask(task.task_id, message)">
+            <button class="delete" v-on:click="$parent.deleteTask(task.task_id)">
                 <icon name="times"></icon>
             </button> 
 
@@ -18,7 +18,7 @@
 
         <div v-else>
             {{task.task}}
-            <button class="delete" v-on:click="deleteTask(task.task_id)">
+            <button class="delete" v-on:click="$parent.deleteTask(task.task_id)">
                 <icon name="times"></icon>
             </button> 
 
@@ -51,18 +51,10 @@ export default {
         return{toggle: true}
     },
     methods: {
-        deleteTask: function(id){
-            axios.delete("http://localhost:3000/task/deleteone", {
-                data: {task_id: id}
-            }).then((response) => {
-                alert(response.data)
-            }).catch()
-        },
         completeTask: function(id){
             axios.put("http://localhost:3000/task/status", {
                 task_id: id, status: "complete"
             }).then((response) => {
-                alert(response.data)
                 this.task.status = "complete"
             }).catch()
         },

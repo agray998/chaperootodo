@@ -13,6 +13,7 @@
 
 import Task from './Task.vue';
 import axios from 'axios';
+import { match } from 'minimatch';
 
 export default {
     name: "Tasklist",
@@ -32,7 +33,18 @@ export default {
       axios.get("http://localhost:3000/task/gettasks").then((response)=>{
         this.tasks = response.data;       
       }).catch()
-    }
+    },
+    deleteTask: function(id){
+      axios.delete("http://localhost:3000/task/deleteone", {
+        data: {task_id: id}
+      }).then((response) => {
+        this.tasks.forEach((task, index) => {
+          if(task.task_id === id){
+            this.tasks.splice(index, 1)
+          }
+        })
+      }).catch()
+    }   
   }
 }
 
