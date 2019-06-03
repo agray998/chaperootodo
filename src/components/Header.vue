@@ -24,7 +24,9 @@ export default {
 h1{
   color: white;
   padding: 2em;
+  padding-top: 1em;
   padding-bottom: 0em;
+  font-size: 4em;
   text-align: center;
   margin-bottom: 0em;
 }

@@ -64,7 +64,7 @@ export default {
 <style scoped>
 
 .tasklist{
-    margin: 0 4em;
+    margin: 0 6em;
     padding: 0em;
     background: whitesmoke;
     border-bottom-left-radius: 1em; 
