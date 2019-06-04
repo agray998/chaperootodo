@@ -1,13 +1,13 @@
 <template>
-    <div class="task-card" v-bind:class="task.status" v-on:dblclick="toggleEdit(false)">
+    <div class="task-card" v-bind:class="task.status">
         
-        <div v-if="!toggle">
+        <div v-if="!toggle" v-on:dblclick="toggleEdit(true)">
             <input class="toggledTask" v-model=task.task v-on:keyup.enter="toggleEdit(true), $parent.editTask(task.task_id, task.task)">
             <button class="delete" v-on:click="$parent.deleteTask(task.task_id)">
                 <icon name="times"></icon>
             </button> 
 
-            <button class="edit" v-on:click="toggleEdit(false)">
+            <button class="edit" v-on:click="toggleEdit(true)">
                 <icon name="pencil-alt"></icon>
             </button>  
 
@@ -16,7 +16,7 @@
             </button> 
         </div>
 
-        <div v-else>
+        <div v-else v-on:dblclick="toggleEdit(false)">
             {{task.task}}
             <button class="delete" v-on:click="$parent.deleteTask(task.task_id)">
                 <icon name="times"></icon>
