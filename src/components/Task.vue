@@ -130,7 +130,8 @@ export default {
     font-size: inherit;
     color: gray;
     width: 50%; 
-    -webkit-box-shadow: 0 0 1em lightblue;
+    height: 1em;
+    box-shadow: 0 0 1em lightblue;
 }
 
 </style>
