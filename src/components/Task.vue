@@ -2,7 +2,7 @@
     <div class="task-card" v-bind:class="task.status" v-on:dblclick="toggleEdit(false)">
         
         <div v-if="!toggle">
-            <input class="toggledTask" v-model="message" v-on:keyup.enter="toggleEdit(true), editTask(task.task_id, message)">
+            <input class="toggledTask" v-model=task.task v-on:keyup.enter="toggleEdit(true), $parent.editTask(task.task_id, task.task)">
             <button class="delete" v-on:click="$parent.deleteTask(task.task_id)">
                 <icon name="times"></icon>
             </button> 
@@ -43,7 +43,7 @@ export default {
     name: 'Task',
     props:{
         task: {
-            type: Object,
+            type: Object
         }
     },
     data(){
@@ -60,16 +60,9 @@ export default {
                 this.task.status = "complete"
             }).catch()
         },
-        editTask: function(id, editedTask){
-            axios.put("http://localhost:3000/task/edittask", {
-                task_id: id, task: editedTask
-            }).then((response) => {
-                alert(response.data)
-            }).catch()
-        },
         toggleEdit: function(toggle){
             this.toggle = toggle
-        },
+        }
     }
 }
 
@@ -104,6 +97,7 @@ export default {
     border-radius: 0.5em;
     background: whitesmoke;
     border: none;
+    outline: none;
 }
 
 .task-card button.complete{
@@ -113,6 +107,7 @@ export default {
     border-radius: 0.5em;
     background: whitesmoke;
     border: none;
+    outline: none;
 }
 
 .task-card button.edit{
@@ -122,15 +117,20 @@ export default {
     border-radius: 0.5em;
     background: whitesmoke;
     border: none;
+    outline: none;
 }
 
 .task-card input.toggledTask{
     background: whitesmoke;
-    border: none;
+    border: solid;
+    border-color: lightblue;
+    border-radius: 0.5em; 
+    outline: none;
     font-weight: bold;
     font-style: italic;
+    font-size: inherit;
     color: gray;
-    width: 50%;
+    width: 50%; 
 }
 
 </style>

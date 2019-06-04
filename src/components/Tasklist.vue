@@ -54,6 +54,13 @@ export default {
         }).then(() => {
           this.getTasks()
         }).catch()
+      },
+      editTask: function(id, editedTask){
+        axios.put("http://localhost:3000/task/edittask", {
+            task_id: id, task: editedTask
+        }).then(() => {
+          this.getTasks()
+        }).catch()
       }   
     }
 }
@@ -64,7 +71,7 @@ export default {
 <style scoped>
 
 .tasklist{
-    margin: 0 6em;
+    margin: 0 12em;
     padding: 0em;
     background: whitesmoke;
     border-bottom-left-radius: 1em; 

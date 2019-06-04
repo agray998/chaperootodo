@@ -13,8 +13,6 @@
 
 <script>
 
-import axios from 'axios';
-
 export default {
     name: 'NewTask',
     props: {
@@ -41,7 +39,7 @@ export default {
 
 .newtask button.add {
   border: none;
-  border-radius: 0.5em;
+  outline: none;
   margin: 0.2em; 
   background: lightblue;
   color: gray;
@@ -53,6 +51,7 @@ export default {
   border-width: 0.1em;
   border-style: solid;
   border-radius: 0.5em;
+  outline: none;
   padding: 0.5em;
   width: 50%; 
   margin: auto;
