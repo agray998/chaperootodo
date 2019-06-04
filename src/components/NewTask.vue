@@ -3,14 +3,6 @@
          
       <input v-model="message" placeholder="Enter a Task..." v-on:keyup.enter="$parent.insertTask(message), resetInput()">
 
-      <select>
-        <option value="">Choose Category</option>
-        <option class="p"> Personal </option>
-        <option class="w"> Work </option>
-        <option class="hi"> High Importance </option>
-        <option class="li"> Low Importance </option>
-      </select>
-
       <button class="add" v-on:click="$parent.insertTask(message), resetInput()">
             <icon name="plus"></icon>
       </button> 
@@ -61,19 +53,8 @@ export default {
   border-radius: 0.5em;
   outline: none;
   padding: 0.5em;
-  width: 40%; 
+  width: 50%; 
   margin: auto;
-}
-
-.newtask select{
-  border: gray;
-  border-width: 0.1em;
-  border-style: solid;
-  border-radius: 0.5em;
-  outline: none;
-  background-color: white;
-  color: gray;
-  width: 12%; 
 }
 
 .newtask{

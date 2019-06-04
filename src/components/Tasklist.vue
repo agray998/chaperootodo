@@ -49,11 +49,13 @@ export default {
         }).catch()
       },
       insertTask: function(input){
-        axios.post("http://localhost:3000/task/insertone", {
-          task: input
-        }).then(() => {
-          this.getTasks()
-        }).catch()
+        if (input !== ""){
+          axios.post("http://localhost:3000/task/insertone", {
+            task: input
+          }).then(() => {
+            this.getTasks()
+          }).catch()
+        }
       },
       editTask: function(id, editedTask){
         axios.put("http://localhost:3000/task/edittask", {
