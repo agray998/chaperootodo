@@ -126,11 +126,11 @@ export default {
     border-color: lightblue;
     border-radius: 0.5em; 
     outline: none;
-    font-weight: bold;
-    font-style: italic;
+    font-weight: inherit;
     font-size: inherit;
     color: gray;
     width: 50%; 
+    -webkit-box-shadow: 0 0 1em lightblue;
 }
 
 </style>
