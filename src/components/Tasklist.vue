@@ -33,12 +33,12 @@ export default {
     },
     methods: {
       getTasks: function(){
-        axios.get("http://localhost:3000/task/gettasks").then((response)=>{
+        axios.get("/task/gettasks").then((response)=>{
           this.tasks = response.data;       
         }).catch()
       },
       deleteTask: function(id){
-        axios.delete("http://localhost:3000/task/deleteone", {
+        axios.delete("/task/deleteone", {
           data: {task_id: id}
         }).then(() => {
           this.tasks.forEach((task, index) => {
@@ -50,7 +50,7 @@ export default {
       },
       insertTask: function(input){
         if (input !== ""){
-          axios.post("http://localhost:3000/task/insertone", {
+          axios.post("/task/insertone", {
             task: input
           }).then(() => {
             this.getTasks()
@@ -58,7 +58,7 @@ export default {
         }
       },
       editTask: function(id, editedTask){
-        axios.put("http://localhost:3000/task/edittask", {
+        axios.put("/task/edittask", {
             task_id: id, task: editedTask
         }).then(() => {
           this.getTasks()

@@ -54,7 +54,7 @@ export default {
     },
     methods: {
         completeTask: function(id){
-            axios.put("http://localhost:3000/task/status", {
+            axios.put("/task/status", {
                 task_id: id, status: "complete"
             }).then(() => {
                 this.task.status = "complete"
