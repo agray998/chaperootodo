@@ -19,4 +19,4 @@ services:
   jenkins:
     image: jenkins/jenkins:latest
     environment:
-      - JENKINS_OPTS="--prefix=/jenkins" 
+      - JENKINS_OPTS="--prefix=/jenkins"
