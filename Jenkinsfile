@@ -15,7 +15,7 @@ pipeline{
                 }
             stage('Run Container'){
                 steps{
-                    sh "sudo docker run -d --name chaptodo -p 80:80 chaptodo"
+                    sh "sudo docker run -d --name chaptodo -p 80:80 chaperoo"
                 }
             }
         }    
