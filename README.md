@@ -1,29 +1,9 @@
-# chaperoo_client
+# Chaperoo To-Do List
 
-## Project setup
-```
-npm install
-```
+## Run the Application
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+Set an environment variable for `$DB_PASSWORD` and run:
 
-### Compiles and minifies for production
 ```
-npm run build
+docker-compose up -d
 ```
-
-### Run your tests
-```
-npm run test
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/)
