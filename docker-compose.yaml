@@ -10,6 +10,8 @@ services:
       - chaperoo-service    
   chaperoo-service: 
     image: jordangrindrod/chaperoo-service
+    environment:
+      - DB_PASSWORD=${DB_PASSWORD}
     depends_on: 
       - chaperoo-db
   chaperoo-db:
