@@ -1,20 +1,36 @@
 version: "3.7"
 services:
   chaperoo-client:
-    image: jordangrindrod/chaperoo-client
+    image: chaperoo-client:v2
     build: .
     ports:
       - target: 80
         published: 80
     depends_on:
       - chaperoo-service    
+    networks:
+      - chaperoo
   chaperoo-service: 
     image: jordangrindrod/chaperoo-service
     environment:
-      - DB_PASSWORD=${DB_PASSWORD}
+      DB_PASSWORD: ${DB_PASSWORD}
+    deploy:
+      replicas: 3
     depends_on: 
       - chaperoo-db
+    networks:
+      - chaperoo
   chaperoo-db:
     image: jordangrindrod/chaperoo-db
     environment:
-      - MYSQL_ROOT_PASSWORD=${DB_PASSWORD}
+      MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
+    networks:
+      - chaperoo
+    volumes:
+    - type: volume
+      source: chaperoo
+      target: /var/lib/mysql
+networks:
+  chaperoo:
+volumes:
+  chaperoo:

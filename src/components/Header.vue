@@ -2,7 +2,7 @@
     <div>
    
       <h1>
-        Welcome to Chaperoo To-Do
+        Welcome to Chaperoo To-Do V2
       </h1>
 
     </div>
@@ -22,7 +22,7 @@ export default {
 <style scoped>
 
 h1{
-  color: white;
+  color: red;
   padding: 2em;
   padding-top: 1em;
   padding-bottom: 0em;
